@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>封装方法</title>
+</head>
+<body>
+    <h1>封装方法</h1>
+
+    <canvas id="canvas" style="border: 1px solid #AA394C;"></canvas>
+
+    <script>
+      // 开始绘制
+      var canvas = document.getElementById("canvas");
+      canvas.width = 800;
+      canvas.height = 600;
+      var context = canvas.getContext("2d");
+
+      drawRect(context, 150, 50, 50, 50, "red", 5, "blue");
+      drawRect(context, 250, 50, 50, 50, "green", 5, "red");
+      drawRect(context, 350, 50, 50, 50, "yellow", 5, "black");
+
+      // 封装方法
+      function drawRect (cxt, x, y, width, height, fillColor, borderWidth, borderColor) {
+        // 绘制路径
+        cxt.beginPath();
+        cxt.moveTo(x, y);
+        cxt.lineTo(x + width, y);
+        cxt.lineTo(x + width, y + height);
+        cxt.lineTo(x, y + height);
+        cxt.lineTo(x, y);
+        cxt.closePath();
+        // 画笔样式
+        cxt.lineWidth = borderWidth;
+        cxt.strokeStyle = borderColor;
+        cxt.fillStyle = fillColor;
+        // 绘制方式
+        cxt.fill();
+        cxt.stroke();
+      }
+
+      // 使用 rect(x, y, width, height) 绘制矩形
+      function drawRect2 (cxt, x, y, width, height, fillColor, borderWidth, borderColor) {
+        cxt.beginPath();
+        // 使用 rect 方法
+        cxt.rect(x, y, width, height);
+        // 画笔样式
+        cxt.lineWidth = borderWidth;
+        cxt.strokeStyle = borderColor;
+        cxt.fillStyle = fillColor;
+        // 绘制方式
+        cxt.fill();
+        cxt.stroke();
+      }
+    </script>
+</body>
+</html>

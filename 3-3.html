@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Canvas Demo</h1>
+
+    <canvas id="canvas" style="border: 1px solid #AA394C;"></canvas>
+
+    <script>
+      var canvas = document.getElementById('canvas');
+      canvas.width = 600;
+      canvas.height = 600;
+      var context = canvas.getContext("2d");
+      
+      // 绘制底色
+      context.rect(0, 0, 600, 600);
+      context.fillStyle = '#2c0f22';
+      context.fill();
+      context.closePath();
+
+      var color = ['#8cfcfe', '#fff', '#e73d5b'];
+      var x = 0;
+      var width = 400;
+
+      for (var i = 0; i < 60; i++) {
+        drawRect(5*i, 5*i, 600-10*i, 600-10*i, color[i%3]);
+      }
+
+      function drawRect(x, y, width, height, fillColor) {
+        context.beginPath();
+        context.rect(x, y, width, height);
+        context.fillStyle = fillColor;
+        context.fill();
+      }
+    </script>
+</body>
+</html>

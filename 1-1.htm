@@ -2,23 +2,22 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>Canvas</title>
+  <title>路径绘制</title>
 </head>
 <body>
 
-  <h1>Canvas</h1>
+  <h1>路径绘制</h1>
 
   <canvas id="canvas" style="border: 1px solid #AA394C;"></canvas>
 
   <script>
-
-
-    // 移动绘制
+    // 开始绘制
     var canvas = document.getElementById("canvas");
     canvas.width = 800;
     canvas.height = 600;
     var context = canvas.getContext("2d");
 
+    // 路径绘制
     context.moveTo(100,100); // 移动画笔
     context.lineTo(120,130); // 画笔落点
     context.lineTo(200,50); // 画笔落点

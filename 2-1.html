@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>矩形绘制</title>
+</head>
+<body>
+
+  <h1>矩形绘制</h1>
+  
+  <canvas id="canvas" style="border: 1px solid #AA394C;"></canvas>
+  
+  <script>
+    // 开始绘制
+    var canvas = document.getElementById("canvas");
+    canvas.width = 800;
+    canvas.height = 600;
+    var context = canvas.getContext("2d");
+
+    // 路径绘制
+    context.moveTo(100,100); // 移动画笔
+    context.lineTo(200,100); // 画笔落点
+    context.lineTo(200,200); // 画笔落点
+    context.lineTo(200,200); // 画笔落点
+    context.lineTo(100,200); // 画笔落点
+    context.lineTo(100,100); // 画笔落点
+    context.closePath(); // 闭合图形
+    context.lineWidth = 5; // 画笔粗细
+    context.fillStyle = '#ff0'; // 填充颜色
+    context.strokeStyle = "#AA394C"; //画笔颜色
+    context.fill(); // 开始绘制
+  </script>
+</body>
+</html>
