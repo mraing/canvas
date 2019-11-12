@@ -19,21 +19,21 @@
     canvas.height = 600;
     var context = canvas.getContext("2d");
 
-    context.moveTo(100,100);
-    context.lineTo(120,130);
-    context.lineTo(200,50);
-    context.lineWidth = 5;
-    context.strokeStyle = "#AA394C";
-    context.stroke();
+    context.moveTo(100,100); // 移动画笔
+    context.lineTo(120,130); // 画笔落点
+    context.lineTo(200,50); // 画笔落点
+    context.lineWidth = 5; // 画笔粗细
+    context.strokeStyle = "#AA394C"; //画笔颜色
+    context.stroke(); // 开始绘制
 
-    context.beginPath();
+    context.beginPath(); // 继续绘制
     context.moveTo(100,100);
     context.lineTo(300,300);
     context.lineTo(100,500);
     context.lineWidth = 5;
     context.strokeStyle = "#f00";
     context.stroke();
-    context.closePath();
+    context.closePath(); // 结束当前绘制
 
     context.beginPath();
     context.moveTo(300,100);
