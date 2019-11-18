@@ -27,7 +27,7 @@ var context = canvas.getContext("2d");
 
 笔画停点: `lineTo(x ,y)`
 
-画笔粗心: `lineWidth(number)`
+画笔粗心: `lineWidth = number`
 
 画笔颜色: `strokeStyle = HEX`
 

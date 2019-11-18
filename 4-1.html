@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>线条的属性</title>
+</head>
+<body>
+    <h1>Canvas Demo</h1>
+
+    <canvas id="canvas" style="border: 1px solid #AA394C;"></canvas>
+
+    <script>
+      var canvas = document.getElementById('canvas');
+      canvas.width = 600;
+      canvas.height = 600;
+      var context = canvas.getContext("2d");
+
+      // 绘画-1
+      context.beginPath();
+      context.moveTo(50, 50);
+      context.lineTo(50, 400);
+      context.lineTo(100, 400);
+      context.lineWidth = 12;
+      context.strokeStyle = '#AA394C';
+      context.lineCap = 'butt'; // 默认线段
+      context.lineJoin = 'miter'; // 连接处是直角
+      context.stroke();
+      context.closePath();
+
+      // 绘画-2
+      context.beginPath();
+      context.moveTo(150, 50);
+      context.lineTo(150, 400);
+      context.lineTo(200, 400);
+      context.lineWidth = 12;
+      context.strokeStyle = '#4CAF50';
+      context.lineCap = 'round'; // 两端半圆线段
+      context.lineJoin = 'bevel'; // 连接处是折角
+      context.stroke();
+      context.closePath();
+
+      // 绘画-2
+      context.beginPath();
+      context.moveTo(250, 50);
+      context.lineTo(250, 400);
+      context.lineTo(300, 400);
+      context.lineWidth = 12;
+      context.strokeStyle = '#2196F3';
+      context.lineCap = 'square'; // 两端长点的线段
+      context.lineJoin = 'round'; // 连接处是圆角
+      context.stroke();
+      context.closePath();
+    </script>
+</body>
+</html>
